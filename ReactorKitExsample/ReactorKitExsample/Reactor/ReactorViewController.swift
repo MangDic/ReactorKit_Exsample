@@ -16,7 +16,6 @@ class ReactorViewController: UIViewController {
     // MARK: Properties
     var disposeBag = DisposeBag()
     let loadTrigger = PublishRelay<Void>()
-    let numberRelay = BehaviorRelay<Int>(value: 0)
     
     // MARK: LifeCycle
     override func viewDidLoad() {
@@ -104,7 +103,7 @@ extension ReactorViewController: View {
     
     private func bindState(_ reactor: MyReactor) {
         reactor.state
-            .map{ String($0.valueRelay.value) }
+            .map{ String($0.value) }
             .distinctUntilChanged()
             .bind(to: self.valueLabel.rx.text)
             .disposed(by: disposeBag)

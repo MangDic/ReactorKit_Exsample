@@ -9,8 +9,8 @@ import ReactorKit
 import RxCocoa
 
 class ResultReactor: Reactor {
-    init(valueRelay: BehaviorRelay<Int>) {
-        initialState = State(valueRelay: valueRelay)
+    init(value: Int) {
+        initialState = State(value: value)
     }
     
     enum Action {
@@ -22,7 +22,7 @@ class ResultReactor: Reactor {
     }
     
     struct State {
-        let valueRelay: BehaviorRelay<Int>
+        var value: Int = 0
     }
     
     var initialState: State

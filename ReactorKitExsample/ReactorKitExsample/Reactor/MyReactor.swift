@@ -23,7 +23,7 @@ class MyReactor: Reactor {
     }
     
     struct State {
-        let valueRelay = BehaviorRelay<Int>(value: 0)
+        var value = 0
     }
     
     let initialState: State = State()
@@ -43,15 +43,15 @@ class MyReactor: Reactor {
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
-        let newState = state
+        var newState = state
         
         switch mutation {
         case .loadData(let value):
-            newState.valueRelay.accept(value)
+            newState.value = value
         case .increaseValue(let value):
-            newState.valueRelay.accept(newState.valueRelay.value + value)
+            newState.value += value
         case .decreaseValue(let value):
-            newState.valueRelay.accept(newState.valueRelay.value - value)
+            newState.value -= value
         }
         
         return newState
@@ -65,7 +65,7 @@ class MyReactor: Reactor {
     
     private func navigateToResultScreen() {
         let vc = ResultViewController()
-        let reactor = ResultReactor(valueRelay: self.initialState.valueRelay)
+        let reactor = ResultReactor(value: currentState.value)
         vc.reactor = reactor
         AppDelegate.rootViewController.pushViewController(vc, animated: true)
     }

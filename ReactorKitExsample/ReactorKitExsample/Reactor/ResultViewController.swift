@@ -42,7 +42,7 @@ extension ResultViewController: View {
     
     func bind(reactor: ResultReactor) {
         reactor.state
-            .map { String($0.valueRelay.value) }
+            .map { String($0.value) }
             .bind(to: valueLabel.rx.text)
             .disposed(by: disposeBag)
     }
