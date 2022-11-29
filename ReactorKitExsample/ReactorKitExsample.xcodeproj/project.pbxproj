@@ -23,6 +23,7 @@
 		DAF99BF32934ACDC00D79C6F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF99BF22934ACDC00D79C6F /* ViewModel.swift */; };
 		DAF99BF52934BBA700D79C6F /* ReactorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF99BF42934BBA700D79C6F /* ReactorViewController.swift */; };
 		DAF99BFA2935C6BB00D79C6F /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF99BF92935C6BB00D79C6F /* ResultViewController.swift */; };
+		DAF99C012935ECEF00D79C6F /* ResultReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF99C002935ECEF00D79C6F /* ResultReactor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		DAF99BF42934BBA700D79C6F /* ReactorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactorViewController.swift; sourceTree = "<group>"; };
 		DAF99BF92935C6BB00D79C6F /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		DAF99BFD2935C9CE00D79C6F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAF99C002935ECEF00D79C6F /* ResultReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultReactor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				DAF99BF42934BBA700D79C6F /* ReactorViewController.swift */,
 				DAF99BF02934763200D79C6F /* MyReactor.swift */,
 				DAF99BF92935C6BB00D79C6F /* ResultViewController.swift */,
+				DAF99C002935ECEF00D79C6F /* ResultReactor.swift */,
 			);
 			path = Reactor;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAF99BF52934BBA700D79C6F /* ReactorViewController.swift in Sources */,
+				DAF99C012935ECEF00D79C6F /* ResultReactor.swift in Sources */,
 				DAF99BB7293474F900D79C6F /* ViewController.swift in Sources */,
 				DAF99BF12934763200D79C6F /* MyReactor.swift in Sources */,
 				DAF99BF32934ACDC00D79C6F /* ViewModel.swift in Sources */,

@@ -11,31 +11,17 @@ import RxSwift
 import RxCocoa
 import SnapKit
 import Then
+import ReactorKit
 
 class ResultViewController: UIViewController {
     // MARK: Properties
     var disposeBag = DisposeBag()
-    let valueRealy = BehaviorRelay<Int>(value: 0)
     
     // MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupLayout()
-        bind()
-    }
-    
-    // MARK: Binding
-    private func bind() {
-        valueRealy
-            .map { String($0) }
-            .bind(to: valueLabel.rx.text)
-            .disposed(by: disposeBag)
-    }
-    
-    // MARK: Dependency Injection
-    func setupDI(valueRealy: BehaviorRelay<Int>) {
-        valueRealy.bind(to: self.valueRealy).disposed(by: disposeBag)
     }
     
     // MARK: View
@@ -48,5 +34,16 @@ class ResultViewController: UIViewController {
         valueLabel.snp.makeConstraints {
             $0.center.leading.trailing.equalToSuperview()
         }
+    }
+}
+
+extension ResultViewController: View {
+    typealias Reactor = ResultReactor
+    
+    func bind(reactor: ResultReactor) {
+        reactor.state
+            .map { String($0.valueRelay.value) }
+            .bind(to: valueLabel.rx.text)
+            .disposed(by: disposeBag)
     }
 }

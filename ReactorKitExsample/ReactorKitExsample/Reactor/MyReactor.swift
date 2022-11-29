@@ -65,7 +65,8 @@ class MyReactor: Reactor {
     
     private func navigateToResultScreen() {
         let vc = ResultViewController()
-        vc.setupDI(valueRealy: initialState.valueRelay)
+        let reactor = ResultReactor(valueRelay: self.initialState.valueRelay)
+        vc.reactor = reactor
         AppDelegate.rootViewController.pushViewController(vc, animated: true)
     }
 }
