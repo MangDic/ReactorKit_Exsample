@@ -15,6 +15,7 @@ import Then
 class ReactorViewController: UIViewController {
     // MARK: Properties
     var disposeBag = DisposeBag()
+    let loadTrigger = PublishRelay<Void>()
     let numberRelay = BehaviorRelay<Int>(value: 0)
     
     // MARK: LifeCycle
@@ -22,12 +23,7 @@ class ReactorViewController: UIViewController {
         super.viewDidLoad()
         
         setupLayout()
-        setupReactor()
-    }
-    
-    // MARK: Method
-    private func setupReactor() {
-        self.reactor = MyReactor()
+        loadTrigger.accept(())
     }
     
     // MARK: View
@@ -84,6 +80,12 @@ extension ReactorViewController: View {
     }
     
     private func bindAction(_ reactor: MyReactor) {
+        // 만약 초기 데이터를 세팅하고 싶은 경우 이런식으로 사용
+        loadTrigger
+            .map { .load }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
         plusBtn.rx.tap
             .map { .increase(value: 1) }
             .bind(to: reactor.action)
@@ -95,7 +97,7 @@ extension ReactorViewController: View {
             .disposed(by: disposeBag)
         
         resultBtn.rx.tap
-            .map { .result }
+            .map { .tapResult }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
     }

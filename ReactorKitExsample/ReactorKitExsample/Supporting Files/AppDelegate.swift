@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
         window.rootViewController = AppDelegate.rootViewController
         let vc = ReactorViewController() // ViewController()
+        let reactor = MyReactor()
+        // 중요!
+        vc.reactor = reactor
         AppDelegate.rootViewController.pushViewController(vc, animated: false)
         window.backgroundColor = .white
         window.makeKeyAndVisible()
