@@ -9,6 +9,12 @@ import ReactorKit
 import RxCocoa
 
 class MyReactor: Reactor {
+    let provider: ServiceProviderProtocol
+    
+    init(provider: ServiceProviderProtocol) {
+        self.provider = provider
+    }
+    
     enum Action {
         case load
         case increase(value: Int)
@@ -65,7 +71,7 @@ class MyReactor: Reactor {
     
     private func navigateToResultScreen() {
         let vc = ResultViewController()
-        let reactor = ResultReactor(value: currentState.value)
+        let reactor = ResultReactor(provider: provider, value: currentState.value)
         vc.reactor = reactor
         AppDelegate.rootViewController.pushViewController(vc, animated: true)
     }

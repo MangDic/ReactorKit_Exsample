@@ -17,8 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let window = window else { return false }
     
         window.rootViewController = AppDelegate.rootViewController
+
         let vc = ReactorViewController() // ViewController()
-        let reactor = MyReactor()
+        let provider = ServiceProvider()
+        let reactor = MyReactor(provider: provider)
         // 중요!
         vc.reactor = reactor
         AppDelegate.rootViewController.pushViewController(vc, animated: false)

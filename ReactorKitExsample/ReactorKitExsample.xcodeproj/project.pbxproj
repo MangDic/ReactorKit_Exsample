@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DAAE22882938735B0015C5A2 /* ValueService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAE22872938735B0015C5A2 /* ValueService.swift */; };
+		DAAE228A29387A1E0015C5A2 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAE228929387A1E0015C5A2 /* ServiceProvider.swift */; };
+		DAAE228C29387AA50015C5A2 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAE228B29387AA50015C5A2 /* BaseService.swift */; };
 		DAF99BB3293474F900D79C6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF99BB2293474F900D79C6F /* AppDelegate.swift */; };
 		DAF99BB7293474F900D79C6F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF99BB6293474F900D79C6F /* ViewController.swift */; };
 		DAF99BBC293474FA00D79C6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAF99BBB293474FA00D79C6F /* Assets.xcassets */; };
@@ -44,6 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DAAE22872938735B0015C5A2 /* ValueService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueService.swift; sourceTree = "<group>"; };
+		DAAE228929387A1E0015C5A2 /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
+		DAAE228B29387AA50015C5A2 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		DAF99BAF293474F900D79C6F /* ReactorKitExsample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactorKitExsample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF99BB2293474F900D79C6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAF99BB6293474F900D79C6F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +98,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DAAE228D29387BE40015C5A2 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				DAAE22872938735B0015C5A2 /* ValueService.swift */,
+				DAAE228929387A1E0015C5A2 /* ServiceProvider.swift */,
+				DAAE228B29387AA50015C5A2 /* BaseService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		DAF99BA6293474F900D79C6F = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +167,7 @@
 		DAF99BF72935C4A900D79C6F /* Reactor */ = {
 			isa = PBXGroup;
 			children = (
+				DAAE228D29387BE40015C5A2 /* Service */,
 				DAF99BF42934BBA700D79C6F /* ReactorViewController.swift */,
 				DAF99BF02934763200D79C6F /* MyReactor.swift */,
 				DAF99BF92935C6BB00D79C6F /* ResultViewController.swift */,
@@ -316,9 +333,12 @@
 				DAF99BF52934BBA700D79C6F /* ReactorViewController.swift in Sources */,
 				DAF99C012935ECEF00D79C6F /* ResultReactor.swift in Sources */,
 				DAF99BB7293474F900D79C6F /* ViewController.swift in Sources */,
+				DAAE228A29387A1E0015C5A2 /* ServiceProvider.swift in Sources */,
+				DAAE22882938735B0015C5A2 /* ValueService.swift in Sources */,
 				DAF99BF12934763200D79C6F /* MyReactor.swift in Sources */,
 				DAF99BF32934ACDC00D79C6F /* ViewModel.swift in Sources */,
 				DAF99BB3293474F900D79C6F /* AppDelegate.swift in Sources */,
+				DAAE228C29387AA50015C5A2 /* BaseService.swift in Sources */,
 				DAF99BFA2935C6BB00D79C6F /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
